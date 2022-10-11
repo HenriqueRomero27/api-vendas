@@ -6,16 +6,17 @@ import { errors } from 'celebrate';
 import routes from'./routes/index';
 import AppError from '@shared/errors/AppError';
 import '@shared/typeorm/index';
+import uploadConfig from '@config/upload';
 
 const app = express();
 
 app.use(cors());
 app.use(express.json());
-
+app.use('/files', express.static(uploadConfig.directory));
 app.use(routes);
 app.use(errors());
 
-app.use((req: Request, res: Response, err: Error, next: NextFunction) => {
+app.use((_req: Request, res: Response, err: Error, _next: NextFunction) => {
   if(err instanceof AppError) {
     return res.status(err.statusCode).json({
       status: 'error',
