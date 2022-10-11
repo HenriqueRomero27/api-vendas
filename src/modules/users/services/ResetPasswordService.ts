@@ -33,6 +33,7 @@ class ResetPasswordService {
     }
 
     user.password = await hash(password, 8);
+    await userTokensRepository.save(user);
   }
 }
 export default ResetPasswordService;
