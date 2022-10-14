@@ -11,7 +11,7 @@ interface ITemplateVaiable {
 }
 
 interface IParseMailTemplate {
-    template: string,
+    file: string,
     variables: ITemplateVaiable
 }
 

@@ -1,0 +1,19 @@
+Fluxo de trabalho git
+
+ Comandos para subir o código para o github
+
+ git add .
+
+ git status 
+
+ git commit -m ":feat: descrição do que foi feito"
+
+ git push origin release
+
+
+ Comando para atualizar a sua branch
+ git pull origin nomedabranch
+
+ Comando para mudar de branch
+ git checkout nomedabrach
+
